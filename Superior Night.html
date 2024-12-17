@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superior Night University Function Invitation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f7;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+            width: 250px;
+            font-size: 16px;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #3498db;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #2980b9;
+            }
+
+        .invitation {
+            display: none;
+            margin-top: 50px;
+            background-color: #ecf0f1;
+            padding: 20px;
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            margin: auto;
+        }
+
+            .invitation h1 {
+                color: #3498db;
+                font-size: 28px;
+            }
+    </style>
+</head>
+<body>
+
+    <!-- First Interface: Name Input -->
+    <div id="nameInput" style="margin-top:150px">
+        <h1>Welcome to the Superior Night University Function</h1>
+        <p>Please enter your name to receive a special invitation:</p>
+        <input type="text" id="studentName" placeholder="Enter your name">
+        <button onclick="showInvitation()">Get Invitation</button>
+    </div>
+
+    <!-- Second Interface: Invitation -->
+    <div id="invitationMessage" class="invitation" style="margin-top:150px;">
+        <h1 id="message"></h1>
+        <p>
+            We are thrilled to invite you to our <font color="red">*Superior Night University Function*</font> where an evening of fun, laughter, and unforgettable performances awaits you!
+            Join us to witness cultural programs, live music, and exciting stage performances, specially planned for all our dear students.
+            Come celebrate and make beautiful memories with your friends and fellow students.
+            <br><br>
+            We can't wait to see you there!
+        </p>
+    </div>
+
+    <script>function showInvitation() {
+            var name = document.getElementById("studentName").value.trim();
+            if (name !== "") {
+                document.getElementById("nameInput").style.display = "none";
+                document.getElementById("invitationMessage").style.display = "block";
+                document.getElementById("message").innerText = "Hi, " + name + "! You're Invited!";
+            } else {
+                alert("Please enter your name.");
+            }
+        }</script>
+</body>
+</html>
